@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="add-task.css" rel="stylesheet" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>add-task</title>
+  </head>
+  <body>
+    <article>
+      <a class="back-to-home" href="home.html"
+        ><input
+          type="image"
+          src="assets/arrow-left.png"
+          class="back-to-home" /></a
+      ><br />
+
+      <input
+        type="text"
+        name="addtasktextbox"
+        placeholder="Add task"
+        class="add-task-textbox taskName"
+        onkeyup="changeCheck()"
+      />
+      <div class="main">
+        <label class="label" for="choosedate">Choose date</label><br />
+        <input
+          type="date"
+          name="choosedate"
+          class="dateSelect"
+          value="2022-08-12"
+          onclick="changeCheck()"
+        /><br />
+        <label for="choosetime">choose time</label><br />
+        <select
+          name="choosetime"
+          class="choosetime timeSelect"
+          onclick="changeCheck()"
+        >
+          <option value="08:00-08:30">08:00-08:30</option>
+          <option value="08:30-09:00">08:30-09:00</option>
+          <option value="09:00-09:30">09:00-09:30</option>
+          <option value="09:30-10:00">09:30-10:00</option>
+          <option value="10:00-10:30">10:00-10:30</option>
+          <option value="10:30-11:00">10:30-11:00</option>
+          <option value="11:00-11:30">11:00-11:30</option>
+          <option value="11:30-12:00">11:30-12:00</option>
+          <option value="12:00-12:30">12:00-12:30</option>
+          <option value="12:30-13:00" selected>12:30-13:00</option>
+          <option value="13:00-13:30">13:00-13:30</option>
+          <option value="13:30-14:00">13:30-14:00</option>
+          <option value="14:00-14:30">14:00-14:30</option>
+          <option value="14:30-15:00">14:30-15:00</option>
+          <option value="15:00-15:30">15:00-15:30</option>
+          <option value="15:30-16:00">15:30-16:00</option>
+          <option value="16:00-16:30">16:00-16:30</option>
+          <option value="16:30-17:00">16:30-17:00</option>
+          <option value="17:00-17:30">17:00-17:30</option>
+          <option value="17:30-18:00">17:30-18:00</option>
+          <option value="18:00-18:30">18:00-18:30</option>
+          <option value="18:30-19:00">18:30-19:00</option>
+          <option value="19:00-19:30">19:00-19:30</option>
+          <option value="19:30-20:00">19:30-20:00</option>
+          <option value="20:00-20:30">20:00-20:30</option>
+          <option value="20:30-21:00">20:30-21:00</option>
+          <option value="21:00-21:30">21:00-21:30</option>
+          <option value="21:30-22:00">21:30-22:00</option>
+          <option value="22:00-22:30">22:00-22:30</option>
+          <option value="22:30-23:00">22:30-23:00</option>
+          <option value="23:00-23:30">23:00-23:30</option>
+          <option value="23:30-24:00">23:30-24:00</option></select
+        ><br /><br />
+        <label for="choosecategry">Choose task type</label><br />
+        <div class="radio-toolbar">
+          <input
+            type="radio"
+            name="chooseCategory"
+            id="Work"
+            value="Work"
+            onclick="changeCheck()"
+          />
+          <label for="Work" class="radio-Personal">Work</label>
+          <input
+            type="radio"
+            name="chooseCategory"
+            id="Personal"
+            value="Personal"
+            onclick="changeCheck()"
+          />
+          <label for="Personal">Personal</label>
+          <input
+            type="radio"
+            name="chooseCategory"
+            id="Shopping"
+            value="Shopping"
+            onclick="changeCheck()"
+          />
+          <label for="Shopping">Shopping</label>
+          <input
+            type="radio"
+            name="chooseCategory"
+            id="Health"
+            value="Health"
+            onchange="changeCheck()"
+          />
+          <label for="Health">Health</label>
+          <input
+            type="radio"
+            name="chooseCategory"
+            id="Other"
+            value="Other"
+            onclick="changeCheck()"
+          />
+          <label for="Other">Other</label><br /><br />
+        </div>
+        <label for="descriptiontextbox">Write description</label><br />
+        <textarea
+          name="descriptiontextbox"
+          placeholder="Description..."
+          class="description"
+          onkeyup="changeCheck()"
+        ></textarea>
+        <input
+          type="submit"
+          class="submit"
+          value="add task"
+          onclick="saveToLocal()"
+          disabled
+        />
+      </div>
+    </article>
+    <script src="script.js"></script>
+  </body>
+</html>

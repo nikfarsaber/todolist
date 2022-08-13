@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="search.css" rel="stylesheet" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>search</title>
+  </head>
+  <body>
+    <article>
+      <header>
+        <button
+          id="buttonBackClose"
+          class="back-to-home-button back-to-home-action"
+        >
+          <input
+            type="image"
+            src="assets/arrow-left.png"
+            class="back-to-home-img"
+          />
+        </button>
+        <input type="text" class="search-textbox" placeholder="Search task" />
+        <button class="search-button" onclick="searchButtonClick()">
+          <input type="image" src="assets/search.png" class="search-img" />
+        </button>
+      </header>
+      <main></main>
+      <div class="main"></div>
+    </article>
+    <script src="search.js"></script>
+  </body>
+</html>

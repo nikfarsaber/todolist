@@ -1,0 +1,163 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: #444;
+}
+
+article {
+  padding: 50px;
+  /* margin: auto; */
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 15px;
+  font-weight: 100;
+}
+
+input {
+  margin-block: 20px 30px;
+  font-family: sans-serif;
+}
+
+.back-to-home {
+  margin-bottom: 15px;
+}
+
+.main {
+  align-self: flex-end;
+  width: 70%;
+}
+
+.add-task-textbox {
+  font-size: 30px;
+  border: none;
+  font-weight: 100;
+  outline: none;
+  caret-color: black 10px solid;
+  margin-bottom: 30px;
+}
+
+.add-task-textbox::placeholder {
+  color: rgba(153, 153, 153, 0.578);
+}
+
+input[type="date"],
+.choosetime {
+  width: 60%;
+  height: 35px;
+  border: none;
+  outline: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url(assets/arrow-down.png);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  border-width: thin;
+  padding-right: 10px;
+  margin-top: 15px;
+}
+
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding-right: 20px;
+  background: url(assets/arrow-down.png);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  background-size: 13px;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+label[for="Work"] {
+  background-color: #42aafd;
+}
+
+label[for="Personal"] {
+  background-color: #01bacc;
+}
+
+label[for="Shopping"] {
+  background-color: #cd42fd;
+}
+
+label[for="Health"] {
+  background-color: #ee2375;
+}
+
+label[for="Other"] {
+  background-color: #8539f9;
+}
+
+.radio-toolbar label {
+  margin: 5px;
+  color: #fff;
+}
+
+.radio-toolbar label:hover {
+  opacity: 80%;
+}
+/* 
+.radio-toolbar input[type="radio"]:focus + label {
+  border: 2px dashed #444;
+} */
+
+.radio-toolbar input[type="radio"]:checked + label {
+  border: 2px solid black;
+}
+
+textarea {
+  margin-block: 30px;
+  height: 250px;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 100;
+  font-family: sans-serif;
+  border: none;
+  resize: none;
+  outline: none;
+  border-bottom: 1px solid rgba(191, 191, 191, 0.427);
+}
+
+.submit {
+  background-color: blueviolet;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 20px;
+  font-size: 25px;
+  color: #fff;
+}
+
+.submit:disabled {
+  background-color: rgb(183, 141, 221);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 20px;
+  font-size: 25px;
+  color: #fff;
+}
