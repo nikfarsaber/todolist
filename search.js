@@ -15,7 +15,8 @@ document
       textBoxSearch.value = "";
       textBoxSearch.style.visibility = "hidden";
       backOrCloseImage.src = "assets/arrow-left.png";
-      document;
+      document.querySelector("main").innerHTML = "";
+      updateTasks();
     } else {
       window.location.replace("home.html");
     }
