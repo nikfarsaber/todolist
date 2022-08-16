@@ -1,14 +1,13 @@
+clearInputs();
+
 function changeCheck() {
   const allRadio = document.getElementsByName("chooseCategory");
-  let taskType = 0;
   const taskName = document.querySelector(".taskName").value;
   const taskTime = document.querySelector(".timeSelect").value;
   const taskDate = document.querySelector(".dateSelect").value;
-  for (i = 0; i < allRadio.length; ++i) {
-    if (allRadio[i].checked) {
-      taskType = allRadio[i].value;
-    }
-  }
+  let taskType = document.querySelector(
+    'input[name="chooseCategory"]:checked'
+  )?.value;
   const taskDescription = document.querySelector(".description").value;
   // console.log(taskDate);
   if (taskName && taskTime && taskDate && taskType && taskDescription) {
@@ -45,8 +44,14 @@ function clearInputs() {
   const inputArray = changeCheck();
   document.querySelector(".taskName").value = "";
   document.querySelector(".timeSelect").value = "12:30-13:00";
-  document.getElementById(inputArray[3]).checked = false;
-  document.querySelector(".dateSelect").value = "2022-08-12";
+  if (document.querySelector('input[name="chooseCategory"]:checked')) {
+    document.querySelector(
+      'input[name="chooseCategory"]:checked'
+    ).checked = false;
+  }
+  document.querySelector(".dateSelect").value = new Date()
+    .toISOString()
+    .split("T")[0];
   document.querySelector(".description").value = "";
   document.querySelector(".submit").disabled = true;
 }
