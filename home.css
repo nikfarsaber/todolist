@@ -139,6 +139,10 @@ ul {
   display: grid;
   grid-template-rows: repeat(19, 1fr);
 }
+.edit-button {
+  width: 20px;
+  height: 20px;
+}
 
 .list-tasks {
   position: relative;

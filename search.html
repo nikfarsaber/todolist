@@ -20,7 +20,12 @@
             class="back-to-home-img"
           />
         </button>
-        <input type="text" class="search-textbox" placeholder="Search task" />
+        <input
+          type="text"
+          class="search-textbox"
+          placeholder="Search task"
+          onkeyup="searchTextChange()"
+        />
         <button class="search-button" onclick="searchButtonClick()">
           <input type="image" src="assets/search.png" class="search-img" />
         </button>
