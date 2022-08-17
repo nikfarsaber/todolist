@@ -51,23 +51,16 @@ function setSourceStorage() {
   };
   if (localStorage.getItem("todolistsource") !== null) {
     objectSource = JSON.parse(localStorage.getItem("todolistsource"));
+    const stringTime = timeInString();
     for (i = 0; i < objectSource.length; ++i) {
-      // console.log(objectSource[i].taskDate);
-      /*
-      let arrayDate = objectSource[i].taskDate.split("-");
-      console.log(arrayDate);
-      let secoundAll =
-        Number(new Date(arrayDate[0], arrayDate[1], arrayDate[2]).getTime()) /
-          1000 +
-        28800 +
-        1800 * rowGridNumber[objectSource[i].taskTime];
-      console.log(
-        rowGridNumber[objectSource[i].taskTime],
-        secoundAll,
-        new Date(arrayDate[0], arrayDate[1], arrayDate[2]).getTime() / 1000
+      taskStringTime = +(
+        objectSource[i].taskDate.slice(0, 4) +
+        objectSource[i].taskDate.slice(5, 7) +
+        objectSource[i].taskDate.slice(8, 10) +
+        objectSource[i].taskTime.slice(6, 8) +
+        objectSource[i].taskTime.slice(9, 11)
       );
-      if (secoundAll < new Date().getTime() / 1000) ++countPassTasks;
-      */
+      if (stringTime < taskStringTime) ++countPassTasks;
       if (objectSource[i].taskDate !== new Date().toISOString().slice(0, 10)) {
         continue;
       }
@@ -108,5 +101,26 @@ function setSourceStorage() {
 
 window.addEventListener("load", setSourceStorage());
 
-//
-//
+function timeInString() {
+  const thisTime = new Date();
+  return (
+    1000000 +
+    +`${thisTime.getUTCFullYear()}${
+      thisTime.getUTCMonth() / 10 > 1
+        ? thisTime.getUTCMonth()
+        : "0" + thisTime.getUTCMonth()
+    }${
+      thisTime.getDate() / 10 > 1
+        ? thisTime.getDate()
+        : "0" + thisTime.getDate()
+    }${
+      thisTime.getUTCHours() / 10 > 1
+        ? thisTime.getUTCHours()
+        : "0" + thisTime.getUTCHours()
+    }${
+      thisTime.getUTCMinutes() / 10 > 1
+        ? thisTime.getUTCMinutes()
+        : "0" + thisTime.getUTCMinutes()
+    }`
+  );
+}
